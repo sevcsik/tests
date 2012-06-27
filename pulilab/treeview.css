@@ -1,0 +1,70 @@
+.treeview
+{
+  position: relative;
+  padding-left: 50px;
+  width: 300px;
+}
+
+.treeview
+{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.treeview .expandable
+{
+  list-style: none;
+}
+
+.treeview .expandable > ul
+{
+  display: none;
+}
+
+.treeview .expandable > span
+{
+  margin-left: -2.2ex;
+  cursor: pointer;
+}
+
+.treeview .expandable > span:before
+{
+  content: '+ ';
+}
+
+.treeview span.expanded:before
+{
+  content: '- ';
+}
+
+.treeview a
+{
+  color: blue;
+  text-decoration: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+.treeview .move
+{
+  left: 0px;
+  cursor: move;
+}
+
+.treeview .edit
+{
+  right: 50px;
+}
+
+.treeview .delete
+{
+  right: 0px;
+}
+
+.treeview li.dragging
+{
+  opacity: 0.5;
+}
