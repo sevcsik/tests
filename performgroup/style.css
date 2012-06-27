@@ -1,0 +1,174 @@
+/* Copyright (c) 2012 by Andras Sevcsik
+ * Released as Public Domain */
+
+/* Hide templates */
+[data-template]
+{
+  display: none;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  text-align: center;
+  background-image: linear-gradient(top, #444 0%, #eee 50%, #444 100%);
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
+h1, h2
+{
+  font-family: 'Ubuntu';
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  margin: 20px 0;
+}
+
+/* BrowserView style */
+
+.video-browser
+{
+  width: 600px;
+  position: relative;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #888;
+  min-height: 450px;
+  padding-bottom: 40px;
+}
+
+.video-browser h3
+{
+  background-image: linear-gradient(top, #800 0%, #400 100%);
+  border: 1px solid #400;
+  color: white;
+  line-height: 32px;
+  font-family: 'Ubuntu';
+}
+
+.video-browser .loading-icon
+{
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.video-browser.loading .loading-icon
+{
+  display: block;
+}
+
+.video-browser .back-button,
+.video-browser .forward-button
+{
+  position: absolute;
+  display: block;
+  bottom: 5px;
+  height: 30px;
+  background-image: linear-gradient(top, #800 0%, #400 100%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Ubuntu';
+}
+
+.video-browser .back-button:hover,
+.video-browser .forward-button:hover
+{
+  background-image: linear-gradient(top, #a00 0%, #600 100%);
+}
+
+.video-browser .back-button
+{
+  left: 5px;
+  right: 50%;
+  margin-right: 5px;
+}
+
+.video-browser .forward-button
+{
+  right: 5px;
+  left: 50%;
+  margin-left: 5px;
+}
+
+/* VideoView style */
+
+.video
+{
+  font-size: 12px;
+  text-align: left;
+  padding: 5px 70px 5px 110px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  min-height: 65px;
+}
+
+.video .thumb
+{
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -27px;
+}
+
+.video .title
+{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.video .duration
+{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  padding: 3px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.video .play
+{
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -15px;
+  height: 30px;
+  width: 60px;
+  line-height: 26px;
+  font-family: 'Ubuntu';
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(top, #800 0%, #400 100%);
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+.video .play:hover
+{
+  background-image: linear-gradient(top, #a00 0%, #600 100%);
+}
+
