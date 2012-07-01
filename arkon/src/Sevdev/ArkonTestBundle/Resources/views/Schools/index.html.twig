@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Institutions' %}
+{% block page_content %}
+    {% if schools is not empty %}
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Registration Date</th>
+        </tr>
+
+        {% for school in schools %}
+
+        <tr style="height: 50px">
+            <td>{{ school.getName() }}</td>
+            <td>{{ school.getType(true) }}</td>
+            <td>{{ school.getCreatedAt('Y-m-d H:i:s') }}</td>
+            <td>
+                {% if school.getLogo() %}
+                    <img src="{{ app.request.basePath }}/upload/{{ school.getLogo() }}"
+                         height="50">
+                {% else %}
+                    No logo uploaded.
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ app.request.baseurl }}/studies/by_school/{{ school.getId() }}">
+                Studies
+                </a>
+            </td>
+            {% if admin %}
+            <td>
+                <a href="{{ app.request.baseurl }}/schools/edit/{{ school.getId() }}">
+                    Edit
+                </a>
+                <a href="{{ app.request.baseurl }}/schools/delete/{{ school.getId() }}">
+                    Delete
+                </a>
+            </td>
+            {% endif %}
+        </tr>
+
+        {% endfor %}
+
+    </table>
+    
+    {% else %}
+
+    <p class="error">No institutions found.</p>
+
+    {% endif %}
+    <p>
+        <a href="{{ app.request.baseUrl }}/schools/edit/new">Add school</a>
+    </p>
+{% endblock %}

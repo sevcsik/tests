@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Action ' %}
+{% block page_content %}
+{% if display_form %}
+    <form action="{% if school.getId() %}{{ school.getId() }}{% else %}new{% endif %}" 
+          method="post" enctype="multipart/form-data">
+        <label for="school-name-input">Name:</label>
+        <input type="text" id="school-name-input" name="name" 
+               value="{{ school.getName() }}">
+        <br>
+        <label for="school-type-input">Type</label>
+        <select name="type" id="school-type-input" 
+                value="{{ school.getType() }}">
+            <option value="0">elementary school</option>
+            <option value="1">high school</option>
+            <option value="2">university or college</option>
+        </select>
+        <br>
+        {% if school.getLogo() %}
+        Current logo:
+        <img src="{{ app.request.basePath }}/upload/{{ school.getLogo() }} " 
+             height="100">
+        <br>
+        {% endif %}
+        <label for="school-logo-input">Upload logo:</label>
+        <input id="school-logo-input" type="file" name="logo">
+        <br>
+        <input type="submit" value="Submit">
+  </form>
+{% else %}
+    <p class="{% if success %}success{% else %}error{% endif %}">
+        {{ action | capitalize }} action on institution 
+        {{ school.getName() }}
+        {% if success %}succeeded{% else %}failed.{% endif %}.
+        {% if error is defined and error %}
+        Error: {{ error }}
+        {% endif %}
+    </p>     
+{% endif %}
+<a href="{{ app.request.baseUrl }}/schools">Back to schools</a>
+{% endblock %}

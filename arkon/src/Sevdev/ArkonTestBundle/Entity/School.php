@@ -1,0 +1,324 @@
+<?php
+
+namespace Sevdev\ArkonTestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Sevdev\ArkonTestBundle\Entity\School
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Sevdev\ArkonTestBundle\Entity\SchoolRepository")
+ * @ORM\HasLifecycleCallbacks
+ */
+class School
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var boolean $deleted
+     *
+     * @ORM\Column(name="deleted", type="boolean")
+     */
+    private $deleted;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @ORM\Column(name="createdAt", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @var datetime $modifiedAt
+     *
+     * @ORM\Column(name="modifiedAt", type="datetime")
+     */
+    private $modifiedAt;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var smallint $type
+     *
+     * @ORM\Column(name="type", type="smallint")
+     */
+    private $type;
+
+    /**
+     * @var string $logo
+     *
+     * @ORM\Column(name="logo", type="string", length=255)
+     */
+    private $logo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Study", mappedBy="school")
+     */
+    private $school;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param datetime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @param string format return date formatted as $format (@see DateTime)
+     * @return mixed datetime or formatted string
+     */
+    public function getCreatedAt($format = null)
+    {
+        if ($format) 
+            return $this->createdAt->format($format);
+        else
+            return $this->createdAt;
+    }
+
+    /*
+     * Set modifiedAt
+     *
+     * @param datetime $modifiedAt
+     */
+    // public function setModifiedAt($modifiedAt)
+    // {
+    //    $this->modifiedAt = $modifiedAt;
+    // }
+
+    /**
+     * Get modifiedAt
+     *
+     * @param string format return date formatted as $format (@see DateTime)
+     * @return mixed datetime or formatted string
+     */
+    public function getModifiedAt($format = null)
+    {
+        if ($format) 
+            return $this->modifiedAt->format($format);
+        else
+            return $this->modifiedAt;
+    }
+
+    /**
+     * Set name (sanitized)
+     *
+     * @param string $name
+     * @throws Exception if name exceeds 255 characters
+     */
+    public function setName($name)
+    {
+        if (strlen($name) > 255) 
+            throw new Exception('Name cannot exceed 255 characters.');
+        $this->name = filter_var($name, FILTER_SANITIZE_STRING);
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set type
+     * 0 - elementary school
+     * 1 - high school
+     * 2 - university/college
+     *
+     * @param smallint $type
+     * @throws Exception if type is not between 0 and 2.
+     */
+    public function setType($type)
+    {
+        $type = (int) $type;
+
+        if (!in_array($type, array(0, 1, 2)))
+            throw new Exception('Invalid type.');
+
+        $this->type = $type;
+    }
+
+    /**
+     * Get type
+     *
+     * @param bool string get type in human-readable form
+     * @return mixed int or string
+     */
+    public function getType($string = false)
+    {
+        $types = array(
+            'elementary school',
+            'high school',
+            'university or college'
+        );
+
+        if ($string)
+            return $types[$this->type];
+        else
+            return $this->type;
+    }
+
+    /**
+     * Moves file to web/upload/ with a generated filename, and 
+     * stores the filename in the database.
+     *
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $logo
+     * @throws Exception on error
+     */
+    public function setLogo(
+        \Symfony\Component\HttpFoundation\File\UploadedFile $logo)
+    {
+        if (!$logo->isValid()) throw new Exception('Logo upload failed.');
+        if (!in_array($logo->getMimeType(), 
+            array('image/jpeg', 'image/pjpeg', 'image/png', 'image/gif')))
+            throw new Exception('Logo filetype not allowed.');
+
+        // Upload new logo
+        $filename = md5(rand()).'.'.$logo->guessExtension();
+        $logo->move('upload/', $filename);
+
+        // Delete previous logo
+        @unlink('upload/'.$this->logo);
+
+        // Save new filename
+        $this->logo = $filename;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return string 
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Initializes 'deleted' to null
+     */
+    public function __construct()
+    {
+        $this->school = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->deleted = 0;
+        $this->logo = '';
+    }
+    
+    /**
+     * Add school
+     *
+     * @param Sevdev\ArkonTestBundle\Entity\Study $school
+     */
+    public function addStudy(\Sevdev\ArkonTestBundle\Entity\Study $school)
+    {
+        $this->school[] = $school;
+    }
+
+    /**
+     * Get school
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getSchool()
+    {
+        return $this->school;
+    }
+
+    /**
+     * Set deleted
+     *
+     * @param boolean $deleted
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = (bool) $deleted;
+    }
+
+    /**
+     * Get deleted
+     *
+     * @return boolean 
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * Update creation date to now. Bound to \@PrePersist
+     *
+     * @ORM\PrePersist
+     */
+    public function updateCreationDate()
+    {
+        $this->createdAt = $this->modifiedAt = new \DateTime();
+    }
+
+    /**
+     * Update modification date to now. Bount to \@PreUpdate
+     *
+     * @ORM\PreUpdate
+     */
+    public function updateModificationDate()
+    {
+        $this->modifiedAt = new \DateTime();
+    }
+
+
+    /**
+     * Set modifiedAt
+     *
+     * @param datetime $modifiedAt
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->modifiedAt = $modifiedAt;
+    }
+
+    /**
+     * Delete school (logical deletion)
+     * Sets deleted to true, and removes associated studies
+     *
+     * @param EntityManager $em the entity manager
+     */
+    public function delete($em)
+    {
+      $this->deleted = true;
+      $em->createQuery("
+        delete from SevdevArkonTestBundle:Study s
+        where s.school = {$this->id}
+        ")->execute();
+    }
+}

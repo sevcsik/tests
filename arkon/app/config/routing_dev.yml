@@ -1,0 +1,50 @@
+home:
+    pattern: /
+    defaults: { _controller: SevdevArkonTestBundle:Schools:index }
+
+schools:
+    resource: "@SevdevArkonTestBundle/Controller/SchoolsController.php"
+    prefix: /schools
+    type: annotation
+
+students:
+    resource: "@SevdevArkonTestBundle/Controller/StudentsController.php"
+    prefix: /students
+    type: annotation
+
+studies:
+    resource: "@SevdevArkonTestBundle/Controller/StudiesController.php"
+    prefix: /studies
+    type: annotation
+
+users:
+    resource: "@SevdevArkonTestBundle/Controller/UsersController.php"
+    prefix: /users
+    type: annotation
+
+login:
+    pattern: /login
+    defaults: { _controller: SevdevArkonTestBundle:Users:login }
+
+login_check:
+    pattern: /login_check
+    
+_assetic:
+    resource: .
+    type:     assetic
+
+_wdt:
+    resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
+    prefix:   /_wdt
+
+_profiler:
+    resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
+    prefix:   /_profiler
+
+_configurator:
+    resource: "@SensioDistributionBundle/Resources/config/routing/webconfigurator.xml"
+    prefix:   /_configurator
+
+_main:
+    resource: routing.yml
+

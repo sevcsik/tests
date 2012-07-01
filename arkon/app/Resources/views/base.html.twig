@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Arkon Test 
+            {% if title is defined %} - {{ title }} {% endif %} 
+        </title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+    </head>
+    <body>
+        <h1>
+            Arkon Test 
+            {% if title is defined %} - {{ title }} {% endif %} 
+        </h1>
+        <nav id="main_menu">
+            <a href="{{ app.request.baseUrl }}/students">Students</a>
+            <a href="{{ app.request.baseUrl }}/schools">Institutions</a>
+            {% if admin %}
+            <a href="{{ app.request.baseUrl }}/users">Users & Privileges</a>
+            {% endif %}
+            <a href="{{ app.request.baseUrl }}/logout">Log out</a>
+        </nav>
+        <div id="page_content">
+            {% block page_content %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+        <footer>
+            <a href="http://sevdev.hu">code by sevdev</a>, 2012
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<form method="post" action="{{ app.request.baseUrl }}/login_check">
+  Username:<input type="text" name="_username"><br>
+  Password:<input type="password" name="_password"><br>
+  <input type="submit" value="submit">
+
+  {% if error %}
+    <p class="error">Login failed.</p>
+  {% endif %}
+</form>

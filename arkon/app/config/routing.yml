@@ -1,0 +1,35 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+home:
+    pattern: /
+    defaults: { _controller: SevdevArkonTestBundle:Schools:index }
+
+schools:
+    resource: "@SevdevArkonTestBundle/Controller/SchoolsController.php"
+    prefix: /schools
+    type: annotation
+
+students:
+    resource: "@SevdevArkonTestBundle/Controller/StudentsController.php"
+    prefix: /students
+    type: annotation
+
+studies:
+    resource: "@SevdevArkonTestBundle/Controller/StudiesController.php"
+    prefix: /studies
+    type: annotation
+
+users:
+    resource: "@SevdevArkonTestBundle/Controller/UsersController.php"
+    prefix: /users
+    type: annotation
+    
+login:
+    pattern: /login
+    defaults: { _controller: SevdevArkonTestBundle:Users:login }
+
+login_check:
+    pattern: /login_check

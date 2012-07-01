@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Studies for ' ~ parent.getName() %}
+{% block page_content %}
+    {% if studies is not empty %}
+    <table>
+        <tr>
+            {% if by_school %}
+            <th>Student name</th>
+            {% else %}
+            <th>School name</th>
+            {% endif %}
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Type</th>
+        </tr>
+        {% for study in studies %}
+        <tr>
+            {% if by_school %}
+            <td>
+                <a href="{{ app.request.baseUrl }}/studies/by_student/{{ study.getStudent.getId() }}">
+                    {{ study.getStudent().getName() }}
+                </a>
+            </td>
+            {% else %}
+            <td>
+                <a href="{{ app.request.baseUrl }}/studies/by_school/{{ study.getSchool().getId() }}">
+                    {{ study.getSchool().getName() }}
+                </a>
+            </td>
+            {% endif %}
+            <td>{{ study.getStart() | date('Y-m-d') }}</td>
+            <td>{{ study.getFinish() | date('Y-m-d') }}</td>
+            <td>{{ study.getType(true) }}</td>
+            {% if admin %}
+            <td>
+                <a href="{{ app.request.baseUrl }}/studies/edit/{{ study.getId() }}">
+                    Edit
+                </a>
+            </td>
+            <td>
+                <a href="{{ app.request.baseUrl }}/studies/delete/{{ study.getId() }}">
+                    Delete
+                </a>
+            <td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <p>
+    {% if admin and by_school %}
+        <a href="{{ app.request.baseurl }}/studies/edit/new?schoolID={{ parent.getId() }}">Add new study</a>
+    {% elseif admin and by_student %}
+        <a href="{{ app.request.baseurl }}/studies/edit/new?studentID={{ parent.getId() }}">Add new study</a>
+    {% endif %}
+    </p>
+{% endblock %}

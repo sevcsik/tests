@@ -1,0 +1,116 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Students' %}
+{% block page_content %}
+    {% if students is not empty %}
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Highest Education</th>
+            <th>Number of Studies</th>
+        </tr>
+
+        {% for student in students %}
+
+        <tr>
+            <td>{{ student.getName() }}</td>
+            <td>{{ student.getGender(true) }}</td>
+            <td>{{ student.getBirthDate('Y-m-d') }}</td>
+            <td>{{ student.getHighestEducation(true) }}</td>
+            <td>{{ student.getNumberOfStudies() }}</td>
+            <td>
+              <a href="{{ app.request.baseurl }}/studies/by_student/{{ student.getId() }}">
+                Studies
+              </a>
+            {% if admin %}
+            <td>
+              <a href="{{ app.request.baseurl }}/students/edit/{{ student.getId() }}">
+                Edit
+              </a>
+              <a href="{{ app.request.baseurl }}/students/delete/{{ student.getId() }}">
+                Delete
+              </a>
+            {% endif %}
+        </tr> 
+
+        {% endfor %}
+
+    </table>
+    
+    {% else %}
+    
+    <p class="error">No students found.</p>
+
+    {% endif %}
+
+    {% if admin %}
+    <p>
+        <a href="{{ app.request.baseurl }}/students/edit/new">Add student</a>
+    </p>
+    {% endif %}
+    <form class="filters">
+        <script>
+            function selectField(id)
+            {
+                inputs = document.querySelectorAll('form.filters input, form.filters select'); 
+
+                for (i in inputs)
+                {
+                    input = inputs[i];
+                    if (input.type == 'radio') continue;
+                    else if (input.id == id) 
+                    {
+                      input.disabled = false;
+                      input.required = true;
+                    }
+                    else 
+                    {
+                      input.disabled = true;
+                      input.required = false;
+                    }
+                }
+            }
+        </script>
+        <h2>Filters</h2>
+        <p>
+            <label for="by_name">Filter by name:</label>
+            <input type="radio" name="filter" onclick="selectField('by_name')" checked>
+            <input type="text" name="by_name" id="by_name" placeholder="Substring" required>
+        </p>
+        <p>
+            <label for="by_gender">Filter by gender:</label>
+            <input type="radio" name="filter" onclick="selectField('by_gender')">
+            <select name="by_gender" id="by_gender" disabled>
+                <option value="0">male</option>
+                <option value="1">female</option>
+            </select>
+        </p>
+        <p>
+            <label for="by_school">Filter by school:</label>
+            <input type="radio" name="filter" onclick="selectField('by_school')">
+            <select name="by_school" id="by_school" disabled>
+                {% for school in schools %}
+                <option value="{{ school.id }}">{{ school.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for="by_birth_date">Filter by birthdate:</label>
+            <input type="radio" name="filter" onclick="selectField('by_birth_date')" >
+            <input type="text" name="by_birth_date" id="by_birth_date" placeholder="YYYY-MM-DD">
+        </p>
+        <p>
+            <label for="by_study_start_date">Filter by study start date:</label>
+            <input type="radio" name="filter" onclick="selectField('by_study_start_date')" >
+            <input type="text" name="by_study_start_date" id="by_study_start_date" placeholder="YYYY-MM-DD">
+        </p>
+        <p>
+            <label for="by_study_end_date">Filter by study end date:</label>
+            <input type="radio" name="filter" onclick="selectField('by_study_end_date')" >
+            <input type="text" name="by_study_end_date" id="by_study_end_date" placeholder="YYYY-MM-DD">
+        </p>
+        <p><button>Filter results</button></p>
+    <form>
+{% endblock %}

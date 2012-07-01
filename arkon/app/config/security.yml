@@ -1,0 +1,38 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: 
+            algorithm: sha1
+            iterations: 1
+            encode_as_base64: false
+        Sevdev\ArkonTestBundle\Entity\User:
+            algorithm: sha1
+            iterations: 1
+            encode_as_base64: false
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        main:
+            entity: 
+                class: Sevdev\ArkonTestBundle\Entity\User
+                property: username
+
+    firewalls:
+        login:
+            pattern: ^/login$
+            anonymous: ~
+            security: false
+        main:
+            pattern: ^/
+            form_login:
+                login_path: /login
+                check_path: /login_check
+            logout: 
+              path: /logout
+              target: /login
+
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONIMOUSLY }
+        - { path: ^/, roles: ROLE_USER }

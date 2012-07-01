@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Manage users' %}
+{% block page_content %}
+  {% if forms is not empty %}
+    {% for form in forms %}
+    <div class="userform">
+      <form method="post" action="{{ app.request.baseUrl }}/users/edit"> 
+        {{ form_widget(form) }}
+        <span><input type="checkbox" name="delete">Delete</span>
+        <input type="submit" value="Save">
+      </form>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

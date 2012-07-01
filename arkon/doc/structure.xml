@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a6" title="">
+  <file path="SevdevArkonTestBundle.php" hash="ddeb16e2897805992152f264ccf57418" package="Default">
+    <namespace-alias name="Bundle">Symfony\Component\HttpKernel\Bundle\Bundle</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle" line="59" package="Default">
+      <extends>Symfony\Component\HttpKernel\Bundle\Bundle</extends>
+      <name>SevdevArkonTestBundle</name>
+      <full_name>\Sevdev\ArkonTestBundle\SevdevArkonTestBundle</full_name>
+    </class>
+    <parse_markers>
+      <error line="59" code="50000">No DocBlock was found for \Sevdev\ArkonTestBundle\SevdevArkonTestBundle</error>
+    </parse_markers>
+  </file>
+  <file path="Entity/Study.php" hash="8a3de56ded0b22b9cb2ffe6a11175882" package="Default">
+    <namespace-alias name="ORM">Doctrine\ORM\Mapping</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="13" package="Default">
+      <extends/>
+      <name>Study</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\Study</full_name>
+      <docblock line="13">
+        <description><![CDATA[Sevdev\ArkonTestBundle\Entity\Study]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="13" name="ORM\Table" description="()"/>
+        <tag line="13" name="ORM\Entity" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="22" name="ORM\Column" description="(name=&quot;id&quot;, type=&quot;integer&quot;)"/>
+          <tag line="22" name="ORM\Id" description=""/>
+          <tag line="22" name="ORM\GeneratedValue" description="(strategy=&quot;AUTO&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$start</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="\date">
+            <type by_reference="false">\date</type>
+          </tag>
+          <tag line="29" name="ORM\Column" description="(name=&quot;start&quot;, type=&quot;date&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="36" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$finish</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="\date">
+            <type by_reference="false">\date</type>
+          </tag>
+          <tag line="36" name="ORM\Column" description="(name=&quot;finish&quot;, type=&quot;date&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="44" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$student</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="\Student">
+            <type by_reference="false">\Student</type>
+          </tag>
+          <tag line="44" name="ORM\ManyToOne" description="(targetEntity=&quot;Student&quot;, inversedBy=&quot;studies&quot;)"/>
+          <tag line="44" name="ORM\JoinColumn" description="(name=&quot;student_id&quot;, referencedColumnName=&quot;id&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="52" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$school</name>
+        <default><![CDATA[]]></default>
+        <docblock line="52">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="var" description="" type="\School">
+            <type by_reference="false">\School</type>
+          </tag>
+          <tag line="52" name="ORM\ManyToOne" description="(targetEntity=&quot;School&quot;, inversedBy=&quot;studies&quot;)"/>
+          <tag line="52" name="ORM\JoinColumn" description="(name=&quot;school_id&quot;, referencedColumnName=&quot;id&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="59" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+        <docblock line="59">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="var" description="education type (same as school types)" type="\smallint">
+            <type by_reference="false">\smallint</type>
+          </tag>
+          <tag line="59" name="ORM\Column" description="(name=&quot;type&quot;, type=&quot;smallint&quot;)"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="66" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="66">
+          <description><![CDATA[Get id]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="66" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="76" package="Default">
+        <name>setStart</name>
+        <full_name>setStart</full_name>
+        <docblock line="76">
+          <description><![CDATA[Set start]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="" type="\date" variable="$start">
+            <type by_reference="false">\date</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$start</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="87" package="Default">
+        <name>getStart</name>
+        <full_name>getStart</full_name>
+        <docblock line="87">
+          <description><![CDATA[Get start]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="87" name="param" description="format date format" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="87" name="return" description="" type="\date">
+            <type by_reference="false">\date</type>
+          </tag>
+        </docblock>
+        <argument line="87">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="98" package="Default">
+        <name>setFinish</name>
+        <full_name>setFinish</full_name>
+        <docblock line="98">
+          <description><![CDATA[Set finish]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="98" name="param" description="" type="\date" variable="$finish">
+            <type by_reference="false">\date</type>
+          </tag>
+        </docblock>
+        <argument line="98">
+          <name>$finish</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="109" package="Default">
+        <name>getFinish</name>
+        <full_name>getFinish</full_name>
+        <docblock line="109">
+          <description><![CDATA[Get finish]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="109" name="param" description="format date format" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="109" name="return" description="" type="\date">
+            <type by_reference="false">\date</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="120" package="Default">
+        <name>setType</name>
+        <full_name>setType</full_name>
+        <docblock line="120">
+          <description><![CDATA[Set type]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="120" name="param" description="" type="\smallint" variable="$type">
+            <type by_reference="false">\smallint</type>
+          </tag>
+        </docblock>
+        <argument line="120">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="132" package="Default">
+        <name>getType</name>
+        <full_name>getType</full_name>
+        <docblock line="132">
+          <description><![CDATA[Get type]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="132" name="param" description="string return value in a human-readable form" type="bool" variable="$string">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="132" name="return" description="" type="\smallint">
+            <type by_reference="false">\smallint</type>
+          </tag>
+        </docblock>
+        <argument line="132">
+          <name>$string</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="150" package="Default">
+        <name>setStudent</name>
+        <full_name>setStudent</full_name>
+        <docblock line="150">
+          <description><![CDATA[Set student]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="150" name="param" description="" type="\Sevdev\ArkonTestBundle\Entity\Student" variable="$student">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\Student</type>
+          </tag>
+        </docblock>
+        <argument line="150">
+          <name>$student</name>
+          <default><![CDATA[]]></default>
+          <type>Sevdev\ArkonTestBundle\Entity\Student</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="160" package="Default">
+        <name>getStudent</name>
+        <full_name>getStudent</full_name>
+        <docblock line="160">
+          <description><![CDATA[Get student]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="160" name="return" description="" type="\Sevdev\ArkonTestBundle\Entity\Student">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\Student</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="170" package="Default">
+        <name>setSchool</name>
+        <full_name>setSchool</full_name>
+        <docblock line="170">
+          <description><![CDATA[Set school]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="170" name="param" description="" type="\Sevdev\ArkonTestBundle\Entity\School" variable="$school">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\School</type>
+          </tag>
+        </docblock>
+        <argument line="170">
+          <name>$school</name>
+          <default><![CDATA[]]></default>
+          <type>Sevdev\ArkonTestBundle\Entity\School</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="180" package="Default">
+        <name>getSchool</name>
+        <full_name>getSchool</full_name>
+        <docblock line="180">
+          <description><![CDATA[Get school]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="180" name="return" description="" type="\Sevdev\ArkonTestBundle\Entity\School">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\School</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="22" code="50019">No short description for property $id</critical>
+      <critical line="29" code="50019">No short description for property $start</critical>
+      <critical line="36" code="50019">No short description for property $finish</critical>
+      <critical line="44" code="50019">No short description for property $student</critical>
+      <critical line="52" code="50019">No short description for property $school</critical>
+      <critical line="59" code="50019">No short description for property $type</critical>
+    </parse_markers>
+  </file>
+  <file path="Entity/User.php" hash="644ae459b995837492a71a14096f36ef" package="Default">
+    <namespace-alias name="ORM">Doctrine\ORM\Mapping</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="14" package="Default">
+      <extends/>
+      <implements>Symfony\Component\Security\Core\User\UserInterface</implements>
+      <name>User</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\User</full_name>
+      <docblock line="14">
+        <description><![CDATA[Sevdev\ArkonTestBundle\Entity\User]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="ORM\Table" description="()"/>
+        <tag line="14" name="ORM\Entity" description="(repositoryClass=&quot;Sevdev\ArkonTestBundle\Entity\UserRepository&quot;)"/>
+        <tag line="14" name="ORM\HasLifecycleCallbacks" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="23" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="23" name="ORM\Column" description="(name=&quot;id&quot;, type=&quot;integer&quot;)"/>
+          <tag line="23" name="ORM\Id" description=""/>
+          <tag line="23" name="ORM\GeneratedValue" description="(strategy=&quot;AUTO&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="30" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$username</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="ORM\Column" description="(name=&quot;username&quot;, type=&quot;string&quot;, length=255)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="37" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$password</name>
+        <default><![CDATA[]]></default>
+        <docblock line="37">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="ORM\Column" description="(name=&quot;password&quot;, type=&quot;string&quot;, length=255)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="44" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$createdAt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+          <tag line="44" name="ORM\Column" description="(name=&quot;createdAt&quot;, type=&quot;datetime&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="51" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$modifiedAt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="51">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="var" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+          <tag line="51" name="ORM\Column" description="(name=&quot;modifiedAt&quot;, type=&quot;datetime&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="58" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$role</name>
+        <default><![CDATA[]]></default>
+        <docblock line="58">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="var" description="" type="\smallint">
+            <type by_reference="false">\smallint</type>
+          </tag>
+          <tag line="58" name="ORM\Column" description="(name=&quot;role&quot;, type=&quot;smallint&quot;)"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="66" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="66">
+          <description><![CDATA[Get id]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="66" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="76" package="Default">
+        <name>setUsername</name>
+        <full_name>setUsername</full_name>
+        <docblock line="76">
+          <description><![CDATA[Set username]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="" type="string" variable="$username">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="86" package="Default">
+        <name>getUsername</name>
+        <full_name>getUsername</full_name>
+        <docblock line="86">
+          <description><![CDATA[Get username]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="86" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="96" package="Default">
+        <name>setPasswordHash</name>
+        <full_name>setPasswordHash</full_name>
+        <docblock line="96">
+          <description><![CDATA[Set password (hash)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="96" name="param" description="sha1 password hash" type="string" variable="$password">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="96">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="106" package="Default">
+        <name>setPassword</name>
+        <full_name>setPassword</full_name>
+        <docblock line="106">
+          <description><![CDATA[Set password (plaintext)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="param" description="plaintext password" type="string" variable="$password">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="106">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="116" package="Default">
+        <name>getPassword</name>
+        <full_name>getPassword</full_name>
+        <docblock line="116">
+          <description><![CDATA[Get password]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="116" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="126" package="Default">
+        <name>setCreatedAt</name>
+        <full_name>setCreatedAt</full_name>
+        <docblock line="126">
+          <description><![CDATA[Set createdAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="126" name="param" description="" type="\datetime" variable="$createdAt">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+        <argument line="126">
+          <name>$createdAt</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="136" package="Default">
+        <name>getCreatedAt</name>
+        <full_name>getCreatedAt</full_name>
+        <docblock line="136">
+          <description><![CDATA[Get createdAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="136" name="return" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="146" package="Default">
+        <name>setModifiedAt</name>
+        <full_name>setModifiedAt</full_name>
+        <docblock line="146">
+          <description><![CDATA[Set modifiedAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="146" name="param" description="" type="\datetime" variable="$modifiedAt">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+        <argument line="146">
+          <name>$modifiedAt</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="156" package="Default">
+        <name>getModifiedAt</name>
+        <full_name>getModifiedAt</full_name>
+        <docblock line="156">
+          <description><![CDATA[Get modifiedAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="156" name="return" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="166" package="Default">
+        <name>setRole</name>
+        <full_name>setRole</full_name>
+        <docblock line="166">
+          <description><![CDATA[Set role]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="166" name="param" description="" type="\smallint" variable="$role">
+            <type by_reference="false">\smallint</type>
+          </tag>
+        </docblock>
+        <argument line="166">
+          <name>$role</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="176" package="Default">
+        <name>getRole</name>
+        <full_name>getRole</full_name>
+        <docblock line="176">
+          <description><![CDATA[Get role]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="return" description="" type="\smallint">
+            <type by_reference="false">\smallint</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="188" package="Default">
+        <name>getRoles</name>
+        <full_name>getRoles</full_name>
+        <docblock line="188">
+          <description><![CDATA[Returns the roles granted to the user.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="188" name="return" description="array of ROLE_* roles" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="198" package="Default">
+        <name>getSalt</name>
+        <full_name>getSalt</full_name>
+        <docblock line="198">
+          <description><![CDATA[Returns salt (currently null)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="198" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="208" package="Default">
+        <name>eraseCredentials</name>
+        <full_name>eraseCredentials</full_name>
+        <docblock line="208">
+          <description><![CDATA[Erase sensitive data (currently nothing)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="208" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="219" package="Default">
+        <name>equals</name>
+        <full_name>equals</full_name>
+        <docblock line="219">
+          <description><![CDATA[Checks if the User is equal to another]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="219" name="param" description="user" type="\Symfony\Component\Security\Core\User\UserInterface" variable="$user">
+            <type by_reference="false">\Symfony\Component\Security\Core\User\UserInterface</type>
+          </tag>
+          <tag line="219" name="return" description="result" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="220">
+          <name>$user</name>
+          <default><![CDATA[]]></default>
+          <type>Symfony\Component\Security\Core\User\UserInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="231" package="Default">
+        <name>updateCreationDate</name>
+        <full_name>updateCreationDate</full_name>
+        <docblock line="231">
+          <description><![CDATA[Update creation date to now. Bound to \@PrePersist]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="231" name="ORM\PrePersist" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="241" package="Default">
+        <name>updateModificationDate</name>
+        <full_name>updateModificationDate</full_name>
+        <docblock line="241">
+          <description><![CDATA[Update modification date to now. Bound to \@PreUpdate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="241" name="ORM\PreUpdate" description=""/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="23" code="50019">No short description for property $id</critical>
+      <critical line="30" code="50019">No short description for property $username</critical>
+      <critical line="37" code="50019">No short description for property $password</critical>
+      <critical line="44" code="50019">No short description for property $createdAt</critical>
+      <critical line="51" code="50019">No short description for property $modifiedAt</critical>
+      <critical line="58" code="50019">No short description for property $role</critical>
+      <error line="219" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $user in equals()</error>
+    </parse_markers>
+  </file>
+  <file path="Entity/SchoolRepository.php" hash="d471625fddb47bed201e36ab4f5cc2c0" package="Default">
+    <namespace-alias name="EntityRepository">Doctrine\ORM\EntityRepository</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="13" package="Default">
+      <extends>Doctrine\ORM\EntityRepository</extends>
+      <name>SchoolRepository</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\SchoolRepository</full_name>
+      <docblock line="13">
+        <description><![CDATA[SchoolRepository]]></description>
+        <long-description><![CDATA[<p>This class was generated by the Doctrine ORM. Add your own custom
+repository methods below.</p>]]></long-description>
+      </docblock>
+    </class>
+  </file>
+  <file path="Entity/School.php" hash="9f4d78599cbbaf641b66a605eeb7939b" package="Default">
+    <namespace-alias name="ORM">Doctrine\ORM\Mapping</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="14" package="Default">
+      <extends/>
+      <name>School</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\School</full_name>
+      <docblock line="14">
+        <description><![CDATA[Sevdev\ArkonTestBundle\Entity\School]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="ORM\Table" description="()"/>
+        <tag line="14" name="ORM\Entity" description="(repositoryClass=&quot;Sevdev\ArkonTestBundle\Entity\SchoolRepository&quot;)"/>
+        <tag line="14" name="ORM\HasLifecycleCallbacks" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="23" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="23" name="ORM\Column" description="(name=&quot;id&quot;, type=&quot;integer&quot;)"/>
+          <tag line="23" name="ORM\Id" description=""/>
+          <tag line="23" name="ORM\GeneratedValue" description="(strategy=&quot;AUTO&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="30" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$deleted</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="30" name="ORM\Column" description="(name=&quot;deleted&quot;, type=&quot;boolean&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="37" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$createdAt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="37">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="var" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+          <tag line="37" name="ORM\Column" description="(name=&quot;createdAt&quot;, type=&quot;datetime&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="44" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$modifiedAt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="var" description="" type="\datetime">
+            <type by_reference="false">\datetime</type>
+          </tag>
+          <tag line="44" name="ORM\Column" description="(name=&quot;modifiedAt&quot;, type=&quot;datetime&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="51" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="51">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="ORM\Column" description="(name=&quot;name&quot;, type=&quot;string&quot;, length=255)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="58" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+        <docblock line="58">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="var" description="" type="\smallint">
+            <type by_reference="false">\smallint</type>
+          </tag>
+          <tag line="58" name="ORM\Column" description="(name=&quot;type&quot;, type=&quot;smallint&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="65" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$logo</name>
+        <default><![CDATA[]]></default>
+        <docblock line="65">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="ORM\Column" description="(name=&quot;logo&quot;, type=&quot;string&quot;, length=255)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="70" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$school</name>
+        <default><![CDATA[]]></default>
+        <docblock line="70">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="70" name="ORM\OneToMany" description="(targetEntity=&quot;Study&quot;, mappedBy=&quot;school&quot;)"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="78" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="78">
+          <description><![CDATA[Get id]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="88" package="Default">
+        <name>setCreatedAt</name>
+        <full_name>setCreatedAt</full_name>
+        <docblock line="88">
+          <description><![CDATA[Set createdAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="88" name="param" description="" type="\datetime" variable="$createdAt">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$createdAt</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="99" package="Default">
+        <name>getCreatedAt</name>
+        <full_name>getCreatedAt</full_name>
+        <docblock line="99">
+          <description><![CDATA[Get createdAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="99" name="param" description="format return date formatted as $format (@see DateTime)" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="99" name="return" description="datetime or formatted string" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="123" package="Default">
+        <name>getModifiedAt</name>
+        <full_name>getModifiedAt</full_name>
+        <docblock line="123">
+          <description><![CDATA[Get modifiedAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="123" name="param" description="format return date formatted as $format (@see DateTime)" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="123" name="return" description="datetime or formatted string" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="123">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="137" package="Default">
+        <name>setName</name>
+        <full_name>setName</full_name>
+        <docblock line="137">
+          <description><![CDATA[Set name (sanitized)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="137" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="137" name="throws" description="if name exceeds 255 characters" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="137">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="149" package="Default">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="149">
+          <description><![CDATA[Get name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="149" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="163" package="Default">
+        <name>setType</name>
+        <full_name>setType</full_name>
+        <docblock line="163">
+          <description><![CDATA[Set type
+0 - elementary school
+1 - high school
+2 - university/college]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="163" name="param" description="" type="\smallint" variable="$type">
+            <type by_reference="false">\smallint</type>
+          </tag>
+          <tag line="163" name="throws" description="if type is not between 0 and 2." type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="163">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="179" package="Default">
+        <name>getType</name>
+        <full_name>getType</full_name>
+        <docblock line="179">
+          <description><![CDATA[Get type]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="179" name="param" description="string get type in human-readable form" type="bool" variable="$string">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="179" name="return" description="int or string" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="179">
+          <name>$string</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="200" package="Default">
+        <name>setLogo</name>
+        <full_name>setLogo</full_name>
+        <docblock line="200">
+          <description><![CDATA[Moves file to web/upload/ with a generated filename, and
+stores the filename in the database.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="200" name="param" description="" type="\Symfony\Component\HttpFoundation\File\UploadedFile" variable="$logo">
+            <type by_reference="false">\Symfony\Component\HttpFoundation\File\UploadedFile</type>
+          </tag>
+          <tag line="200" name="throws" description="on error" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="201">
+          <name>$logo</name>
+          <default><![CDATA[]]></default>
+          <type>Symfony\Component\HttpFoundation\File\UploadedFile</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="224" package="Default">
+        <name>getLogo</name>
+        <full_name>getLogo</full_name>
+        <docblock line="224">
+          <description><![CDATA[Get logo]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="224" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="232" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="232">
+          <description><![CDATA[Initializes 'deleted' to null]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="244" package="Default">
+        <name>addStudy</name>
+        <full_name>addStudy</full_name>
+        <docblock line="244">
+          <description><![CDATA[Add school]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="244" name="param" description="" type="\Sevdev\ArkonTestBundle\Entity\Study" variable="$school">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\Study</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$school</name>
+          <default><![CDATA[]]></default>
+          <type>Sevdev\ArkonTestBundle\Entity\Study</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="254" package="Default">
+        <name>getSchool</name>
+        <full_name>getSchool</full_name>
+        <docblock line="254">
+          <description><![CDATA[Get school]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="254" name="return" description="" type="\Doctrine\Common\Collections\Collection">
+            <type by_reference="false">\Doctrine\Common\Collections\Collection</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="264" package="Default">
+        <name>setDeleted</name>
+        <full_name>setDeleted</full_name>
+        <docblock line="264">
+          <description><![CDATA[Set deleted]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="264" name="param" description="" type="boolean" variable="$deleted">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="264">
+          <name>$deleted</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="274" package="Default">
+        <name>getDeleted</name>
+        <full_name>getDeleted</full_name>
+        <docblock line="274">
+          <description><![CDATA[Get deleted]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="274" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="284" package="Default">
+        <name>updateCreationDate</name>
+        <full_name>updateCreationDate</full_name>
+        <docblock line="284">
+          <description><![CDATA[Update creation date to now. Bound to \@PrePersist]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="284" name="ORM\PrePersist" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="294" package="Default">
+        <name>updateModificationDate</name>
+        <full_name>updateModificationDate</full_name>
+        <docblock line="294">
+          <description><![CDATA[Update modification date to now. Bount to \@PreUpdate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="294" name="ORM\PreUpdate" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="305" package="Default">
+        <name>setModifiedAt</name>
+        <full_name>setModifiedAt</full_name>
+        <docblock line="305">
+          <description><![CDATA[Set modifiedAt]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="305" name="param" description="" type="\datetime" variable="$modifiedAt">
+            <type by_reference="false">\datetime</type>
+          </tag>
+        </docblock>
+        <argument line="305">
+          <name>$modifiedAt</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="316" package="Default">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="316">
+          <description><![CDATA[Delete school (logical deletion)
+Sets deleted to true, and removes associated studies]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="316" name="param" description="the entity manager" type="\EntityManager" variable="$em">
+            <type by_reference="false">\EntityManager</type>
+          </tag>
+        </docblock>
+        <argument line="316">
+          <name>$em</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="23" code="50019">No short description for property $id</critical>
+      <critical line="30" code="50019">No short description for property $deleted</critical>
+      <critical line="37" code="50019">No short description for property $createdAt</critical>
+      <critical line="44" code="50019">No short description for property $modifiedAt</critical>
+      <critical line="51" code="50019">No short description for property $name</critical>
+      <critical line="58" code="50019">No short description for property $type</critical>
+      <critical line="65" code="50019">No short description for property $logo</critical>
+      <critical line="70" code="50019">No short description for property $school</critical>
+      <error line="200" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $logo in setLogo()</error>
+    </parse_markers>
+  </file>
+  <file path="Entity/StudentRepository.php" hash="62a38a26433bc56f65c7a587cd3f4b9e" package="Default">
+    <namespace-alias name="EntityRepository">Doctrine\ORM\EntityRepository</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="13" package="Default">
+      <extends>Doctrine\ORM\EntityRepository</extends>
+      <name>StudentRepository</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\StudentRepository</full_name>
+      <docblock line="13">
+        <description><![CDATA[StudentRepository]]></description>
+        <long-description><![CDATA[<p>This class was generated by the Doctrine ORM. Add your own custom
+repository methods below.</p>]]></long-description>
+      </docblock>
+    </class>
+  </file>
+  <file path="Entity/UserRepository.php" hash="9fb1a4a4cb3aa792f1296f0613ab1c48" package="Default">
+    <namespace-alias name="EntityRepository">Doctrine\ORM\EntityRepository</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="13" package="Default">
+      <extends>Doctrine\ORM\EntityRepository</extends>
+      <name>UserRepository</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\UserRepository</full_name>
+      <docblock line="13">
+        <description><![CDATA[UserRepository]]></description>
+        <long-description><![CDATA[<p>This class was generated by the Doctrine ORM. Add your own custom
+repository methods below.</p>]]></long-description>
+      </docblock>
+    </class>
+  </file>
+  <file path="Entity/Student.php" hash="b0336542cdb89e1ee4b64aac19de6c47" package="Default">
+    <namespace-alias name="ORM">Doctrine\ORM\Mapping</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Entity" line="13" package="Default">
+      <extends/>
+      <name>Student</name>
+      <full_name>\Sevdev\ArkonTestBundle\Entity\Student</full_name>
+      <docblock line="13">
+        <description><![CDATA[Sevdev\ArkonTestBundle\Entity\Student]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="13" name="ORM\Table" description="()"/>
+        <tag line="13" name="ORM\Entity" description="(repositoryClass=&quot;Sevdev\ArkonTestBundle\Entity\StudentRepository&quot;)"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="22" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="22" name="ORM\Column" description="(name=&quot;id&quot;, type=&quot;integer&quot;)"/>
+          <tag line="22" name="ORM\Id" description=""/>
+          <tag line="22" name="ORM\GeneratedValue" description="(strategy=&quot;AUTO&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="29" name="ORM\Column" description="(name=&quot;name&quot;, type=&quot;string&quot;, length=255)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="36" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$gender</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="36" name="ORM\Column" description="(name=&quot;gender&quot;, type=&quot;boolean&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="43" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$birthDate</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="\date">
+            <type by_reference="false">\date</type>
+          </tag>
+          <tag line="43" name="ORM\Column" description="(name=&quot;birthDate&quot;, type=&quot;date&quot;)"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="50" namespace="Sevdev\ArkonTestBundle\Entity" package="Default">
+        <name>$studies</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="50" name="ORM\OneToMany" description="(targetEntity=&quot;Study&quot;, mappedBy=&quot;student&quot;, cascade={&quot;remove&quot;})"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="57" package="Default">
+        <name>getId</name>
+        <full_name>getId</full_name>
+        <docblock line="57">
+          <description><![CDATA[Get id]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="68" package="Default">
+        <name>setName</name>
+        <full_name>setName</full_name>
+        <docblock line="68">
+          <description><![CDATA[Set name (sanitized)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="throws" description="if name exceeds 255 characters" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="80" package="Default">
+        <name>getName</name>
+        <full_name>getName</full_name>
+        <docblock line="80">
+          <description><![CDATA[Get name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="90" package="Default">
+        <name>setGender</name>
+        <full_name>setGender</full_name>
+        <docblock line="90">
+          <description><![CDATA[Set gender]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="90" name="param" description="false for male, true for female" type="boolean" variable="$gender">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="90">
+          <name>$gender</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="101" package="Default">
+        <name>getGender</name>
+        <full_name>getGender</full_name>
+        <docblock line="101">
+          <description><![CDATA[Get gender]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="101" name="param" description="string return in human-readable string" type="bool" variable="$string">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="101" name="return" description="gender string or boolean (false for male)" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="101">
+          <name>$string</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="114" package="Default">
+        <name>setBirthDate</name>
+        <full_name>setBirthDate</full_name>
+        <docblock line="114">
+          <description><![CDATA[Set birthDate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="114" name="param" description="" type="\date" variable="$birthDate">
+            <type by_reference="false">\date</type>
+          </tag>
+        </docblock>
+        <argument line="114">
+          <name>$birthDate</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="125" package="Default">
+        <name>getBirthDate</name>
+        <full_name>getBirthDate</full_name>
+        <docblock line="125">
+          <description><![CDATA[Get birthDate]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="125" name="param" description="format date format" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="125" name="return" description="date if !format, otherwise string" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$format</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="131" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="141" package="Default">
+        <name>addStudy</name>
+        <full_name>addStudy</full_name>
+        <docblock line="141">
+          <description><![CDATA[Add studies]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="141" name="param" description="" type="\Sevdev\ArkonTestBundle\Entity\Study" variable="$studies">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\Study</type>
+          </tag>
+        </docblock>
+        <argument line="141">
+          <name>$studies</name>
+          <default><![CDATA[]]></default>
+          <type>Sevdev\ArkonTestBundle\Entity\Study</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="151" package="Default">
+        <name>getStudies</name>
+        <full_name>getStudies</full_name>
+        <docblock line="151">
+          <description><![CDATA[Get studies]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="151" name="return" description="" type="\Doctrine\Common\Collections\Collection">
+            <type by_reference="false">\Doctrine\Common\Collections\Collection</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="161" package="Default">
+        <name>getNumberOfStudies</name>
+        <full_name>getNumberOfStudies</full_name>
+        <docblock line="161">
+          <description><![CDATA[Get number of studies]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="161" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Entity" line="172" package="Default">
+        <name>getHighestEducation</name>
+        <full_name>getHighestEducation</full_name>
+        <docblock line="172">
+          <description><![CDATA[Get highest education level]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="172" name="param" description="string respond in human-readable form" type="bool" variable="$string">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="172" name="return" description="int or string" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="172">
+          <name>$string</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="22" code="50019">No short description for property $id</critical>
+      <critical line="29" code="50019">No short description for property $name</critical>
+      <critical line="36" code="50019">No short description for property $gender</critical>
+      <critical line="43" code="50019">No short description for property $birthDate</critical>
+      <critical line="50" code="50019">No short description for property $studies</critical>
+      <error line="131" code="50010">No DocBlock was found for method __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="Controller/UsersController.php" hash="4ef0dd7ae9681c39e22cd111285f80ad" package="Default">
+    <namespace-alias name="Controller">Symfony\Bundle\FrameworkBundle\Controller\Controller</namespace-alias>
+    <namespace-alias name="User">Sevdev\ArkonTestBundle\Entity\User</namespace-alias>
+    <namespace-alias name="Route">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</namespace-alias>
+    <namespace-alias name="Template">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</namespace-alias>
+    <namespace-alias name="Secure">JMS\SecurityExtraBundle\Annotation\Secure</namespace-alias>
+    <namespace-alias name="SecurityContext">Symfony\Component\Security\Core\SecurityContext</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Controller" line="15" package="Default">
+      <extends>Symfony\Bundle\FrameworkBundle\Controller\Controller</extends>
+      <name>UsersController</name>
+      <full_name>\Sevdev\ArkonTestBundle\Controller\UsersController</full_name>
+      <docblock line="15">
+        <description><![CDATA[Contains all user management functions]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Sevdev\ArkonTestBundle\Controller" line="23" package="Default">
+        <name>buildUserForm</name>
+        <full_name>buildUserForm</full_name>
+        <docblock line="23">
+          <description><![CDATA[Returns a User form from FormBuilder]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="" type="\Sevdev\ArkonTestBundle\Entity\User" variable="$user">
+            <type by_reference="false">\Sevdev\ArkonTestBundle\Entity\User</type>
+          </tag>
+          <tag line="23" name="return" description="the form" type="\Symfony\Component\Form\Form">
+            <type by_reference="false">\Symfony\Component\Form\Form</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$user</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="47" package="Default">
+        <name>indexAction</name>
+        <full_name>indexAction</full_name>
+        <docblock line="47">
+          <description><![CDATA[Lists all users, and processes posts.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+          <tag line="47" name="Route" description="(&quot;/&quot;)"/>
+          <tag line="47" name="Template" description="(&quot;SevdevArkonTestBundle:Users:index.html.twig&quot;)"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="80" package="Default">
+        <name>postAction</name>
+        <full_name>postAction</full_name>
+        <docblock line="80">
+          <description><![CDATA[Handles POST User modification/deletion]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+          <tag line="80" name="Route" description="(&quot;/edit&quot;)"/>
+          <tag line="80" name="Template" description="(&quot;SevdevArkonTestBundle:Users:action.html.twig&quot;)"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="137" package="Default">
+        <name>loginAction</name>
+        <full_name>loginAction</full_name>
+        <docblock line="137">
+          <description><![CDATA[Display login form and errors. Everything else is done by Symfony.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="137" name="Route" description="(&quot;/login&quot;)"/>
+          <tag line="137" name="Template" description="(&quot;SevdevArkonTestBundle:Users:login.html.twig&quot;)"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Controller/StudiesController.php" hash="6d698678dd10ebe5d0ac95d2e7360333" package="Default">
+    <namespace-alias name="Controller">Symfony\Bundle\FrameworkBundle\Controller\Controller</namespace-alias>
+    <namespace-alias name="Study">Sevdev\ArkonTestBundle\Entity\Study</namespace-alias>
+    <namespace-alias name="School">Sevdev\ArkonTestBundle\Entity\School</namespace-alias>
+    <namespace-alias name="Student">Sevdev\ArkonTestBundle\Entity\Student</namespace-alias>
+    <namespace-alias name="Route">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</namespace-alias>
+    <namespace-alias name="Template">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</namespace-alias>
+    <namespace-alias name="Secure">JMS\SecurityExtraBundle\Annotation\Secure</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Controller" line="16" package="Default">
+      <extends>Symfony\Bundle\FrameworkBundle\Controller\Controller</extends>
+      <name>StudiesController</name>
+      <full_name>\Sevdev\ArkonTestBundle\Controller\StudiesController</full_name>
+      <docblock line="16">
+        <description><![CDATA[Contains all study-related functions]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="29" package="Default">
+        <name>editAction</name>
+        <full_name>editAction</full_name>
+        <docblock line="29">
+          <description><![CDATA[Edit a study - display form or process form data.]]></description>
+          <long-description><![CDATA[<p>Preset school or student can be selected with studentID and
+schoolID query string parameters.</p>]]></long-description>
+          <tag line="29" name="param" description="can be a study ID, or 'new'." type="mixed" variable="$id">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="29" name="Route" description="(&quot;/edit/{id}&quot;)"/>
+          <tag line="29" name="Template" description="(&quot;SevdevArkonTestBundle:Studies:action.html.twig&quot;)"/>
+        </docblock>
+        <argument line="29">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="124" package="Default">
+        <name>indexAction</name>
+        <full_name>indexAction</full_name>
+        <docblock line="124">
+          <description><![CDATA[List all studies by student or school]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="124" name="param" description="'by_school' or 'by_student'" type="string" variable="$list_by">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="124" name="param" description="school or student id" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="124" name="Route" description="(&quot;/{list_by}/{id}&quot;)"/>
+          <tag line="124" name="Template" description="(&quot;SevdevArkonTestBundle:Studies:index.html.twig&quot;)"/>
+        </docblock>
+        <argument line="124">
+          <name>$list_by</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="124">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Controller/SchoolsController.php" hash="1f1db6a90860976a4d6fadd22e36e0d2" package="Default">
+    <namespace-alias name="Controller">Symfony\Bundle\FrameworkBundle\Controller\Controller</namespace-alias>
+    <namespace-alias name="School">Sevdev\ArkonTestBundle\Entity\School</namespace-alias>
+    <namespace-alias name="Route">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</namespace-alias>
+    <namespace-alias name="Template">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</namespace-alias>
+    <namespace-alias name="Secure">JMS\SecurityExtraBundle\Annotation\Secure</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Controller" line="15" package="Default">
+      <extends>Symfony\Bundle\FrameworkBundle\Controller\Controller</extends>
+      <name>SchoolsController</name>
+      <full_name>\Sevdev\ArkonTestBundle\Controller\SchoolsController</full_name>
+      <docblock line="15">
+        <description><![CDATA[Contains all school-related functions]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="24" package="Default">
+        <name>indexAction</name>
+        <full_name>indexAction</full_name>
+        <docblock line="24">
+          <description><![CDATA[Lists all schools with admin controls, if user is admin.]]></description>
+          <long-description><![CDATA[<p>Home page.</p>]]></long-description>
+          <tag line="24" name="Route" description="(&quot;/&quot;)"/>
+          <tag line="24" name="Template" description="(&quot;SevdevArkonTestBundle:Schools:index.html.twig&quot;)"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="50" package="Default">
+        <name>deleteAction</name>
+        <full_name>deleteAction</full_name>
+        <docblock line="50">
+          <description><![CDATA[Delete a school, only with ROLE_ADMIN]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="id" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="50" name="Route" description="(&quot;/delete/{id}&quot;)"/>
+          <tag line="50" name="Template" description="(&quot;SevdevArkonTestBundle:Schools:action.html.twig&quot;)"/>
+          <tag line="50" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+        </docblock>
+        <argument line="50">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="83" package="Default">
+        <name>updateAction</name>
+        <full_name>updateAction</full_name>
+        <docblock line="83">
+          <description><![CDATA[Update school information, only with ROLE_ADMIN]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="param" description="id" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="83" name="Route" description="(&quot;/edit/{id}&quot;)"/>
+          <tag line="83" name="Template" description="(&quot;SevdevArkonTestBundle:Schools:action.html.twig&quot;)"/>
+          <tag line="83" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+        </docblock>
+        <argument line="83">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Controller/StudentsController.php" hash="ef2263effa640ac92911c68cd4f5ae5f" package="Default">
+    <namespace-alias name="Controller">Symfony\Bundle\FrameworkBundle\Controller\Controller</namespace-alias>
+    <namespace-alias name="Student">Sevdev\ArkonTestBundle\Entity\Student</namespace-alias>
+    <namespace-alias name="Route">Sensio\Bundle\FrameworkExtraBundle\Configuration\Route</namespace-alias>
+    <namespace-alias name="Template">Sensio\Bundle\FrameworkExtraBundle\Configuration\Template</namespace-alias>
+    <namespace-alias name="Secure">JMS\SecurityExtraBundle\Annotation\Secure</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\Controller" line="14" package="Default">
+      <extends>Symfony\Bundle\FrameworkBundle\Controller\Controller</extends>
+      <name>StudentsController</name>
+      <full_name>\Sevdev\ArkonTestBundle\Controller\StudentsController</full_name>
+      <docblock line="14">
+        <description><![CDATA[Contains all student-related functions]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="33" package="Default">
+        <name>indexAction</name>
+        <full_name>indexAction</full_name>
+        <docblock line="33">
+          <description><![CDATA[List all students with admin controls, if user is admin.]]></description>
+          <long-description><![CDATA[<p>It's possible to filter with GET parameters:</p>
+
+<ul>
+<li>by_school={school_id}</li>
+<li>by_gender={0|1}</li>
+<li>by_name={substring}</li>
+<li>by_study_start_date={YYYY-MM-DD}</li>
+<li>by_study_end_date={YYYY-MM-DD}</li>
+<li>by_birth_date={YYYY-MM-DD}
+All filters but the first in the query string are ignored.</li>
+</ul>]]></long-description>
+          <tag line="33" name="Route" description="(&quot;/&quot;)"/>
+          <tag line="33" name="Template" description="(&quot;SevdevArkonTestBundle:Students:index.html.twig&quot;)"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="113" package="Default">
+        <name>editAction</name>
+        <full_name>editAction</full_name>
+        <docblock line="113">
+          <description><![CDATA[Displays edit form and processes form data]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="113" name="Route" description="(&quot;/edit/{id}&quot;)"/>
+          <tag line="113" name="Template" description="(&quot;SevdevArkonTestBundle:Students:action.html.twig&quot;)"/>
+          <tag line="113" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+        </docblock>
+        <argument line="113">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\Controller" line="176" package="Default">
+        <name>deleteAction</name>
+        <full_name>deleteAction</full_name>
+        <docblock line="176">
+          <description><![CDATA[Deletes a student FOREVER.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="176" name="Route" description="(&quot;/delete/{id}&quot;)"/>
+          <tag line="176" name="Template" description="(&quot;SevdevArkonTestBundle:Students:action.html.twig&quot;)"/>
+          <tag line="176" name="Secure" description="(roles=&quot;ROLE_ADMIN&quot;)"/>
+        </docblock>
+        <argument line="176">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="DependencyInjection/SevdevArkonTestExtension.php" hash="7e82f24e9b3f4070f989d9298a1fa312" package="Default">
+    <namespace-alias name="ContainerBuilder">Symfony\Component\DependencyInjection\ContainerBuilder</namespace-alias>
+    <namespace-alias name="FileLocator">Symfony\Component\Config\FileLocator</namespace-alias>
+    <namespace-alias name="Extension">Symfony\Component\HttpKernel\DependencyInjection\Extension</namespace-alias>
+    <namespace-alias name="Loader">Symfony\Component\DependencyInjection\Loader</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\DependencyInjection" line="15" package="Default">
+      <extends>Symfony\Component\HttpKernel\DependencyInjection\Extension</extends>
+      <name>SevdevArkonTestExtension</name>
+      <full_name>\Sevdev\ArkonTestBundle\DependencyInjection\SevdevArkonTestExtension</full_name>
+      <docblock line="15">
+        <description><![CDATA[This is the class that loads and manages your bundle configuration]]></description>
+        <long-description><![CDATA[<p>To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}</p>]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\DependencyInjection" line="20" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="20">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+        <argument line="20">
+          <name>$configs</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="20">
+          <name>$container</name>
+          <default><![CDATA[]]></default>
+          <type>Symfony\Component\DependencyInjection\ContainerBuilder</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="20" code="50015">Argument $configs is missing from the Docblock of load()</error>
+      <error line="20" code="50015">Argument $container is missing from the Docblock of load()</error>
+    </parse_markers>
+  </file>
+  <file path="DependencyInjection/Configuration.php" hash="45f10d91ae501a6fb2b9e71578099ec2" package="Default">
+    <namespace-alias name="TreeBuilder">Symfony\Component\Config\Definition\Builder\TreeBuilder</namespace-alias>
+    <namespace-alias name="ConfigurationInterface">Symfony\Component\Config\Definition\ConfigurationInterface</namespace-alias>
+    <class final="false" abstract="false" namespace="Sevdev\ArkonTestBundle\DependencyInjection" line="13" package="Default">
+      <extends/>
+      <implements>Symfony\Component\Config\Definition\ConfigurationInterface</implements>
+      <name>Configuration</name>
+      <full_name>\Sevdev\ArkonTestBundle\DependencyInjection\Configuration</full_name>
+      <docblock line="13">
+        <description><![CDATA[This is the class that validates and merges configuration from your app/config files]]></description>
+        <long-description><![CDATA[<p>To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}</p>]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Sevdev\ArkonTestBundle\DependencyInjection" line="18" package="Default">
+        <name>getConfigTreeBuilder</name>
+        <full_name>getConfigTreeBuilder</full_name>
+        <docblock line="18">
+          <description><![CDATA[{@inheritDoc}]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="Sevdev" full_name="Sevdev">
+    <namespace name="ArkonTestBundle" full_name="Sevdev\ArkonTestBundle">
+      <namespace name="Controller" full_name="Sevdev\ArkonTestBundle\Controller"/>
+      <namespace name="DependencyInjection" full_name="Sevdev\ArkonTestBundle\DependencyInjection"/>
+      <namespace name="Entity" full_name="Sevdev\ArkonTestBundle\Entity"/>
+    </namespace>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

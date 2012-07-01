@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+{% set title = 'Manage users' %}
+{% block page_content %}
+<p>
+  {{ action|capitalize }} action on user {{ user.username }}
+  {% if success %} succeeded. {% else %} failed. {% endif %}
+</p>
+<p>
+  <a href="{{ app.request.baseUrl }}/users">Back to users</a>
+</p>
+{% endblock %}
+
+
+  
