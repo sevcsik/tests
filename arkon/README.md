@@ -1,5 +1,5 @@
-# PHP Test Excercise #
-## PHP Backend Developer position at [Arkon Zrt.] (http://arkon.hu) ## 
+# PHP Test Excercise
+## PHP Backend Developer position at [Arkon Zrt.] (http://arkon.hu)
 
 This sample project is a system for tracking students, schools, and
 educations, implemented with the wonderful [Symfony2] (http://symfony.com)
